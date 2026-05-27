@@ -1,5 +1,6 @@
-﻿#define ARRAYS_1
+﻿//#define ARRAYS_1
 //#define ARRAYS_2
+//#define JAGGED_ARRAYS
 
 
 using System;
@@ -39,6 +40,7 @@ namespace Arrays
                 {3, 5, 8 },
                 {13, 21, 34 },
                 {55, 89, 144 },
+                {233,377,610 },
             };
             Console.WriteLine($"Количество измерений: {i_arr_2.Rank}");
             Console.WriteLine($"Length:{i_arr_2.Length}");
@@ -52,7 +54,50 @@ namespace Arrays
                 }
                 Console.WriteLine();
             }
+            Console.WriteLine();
+            Console.WriteLine($"Сумма: {i_arr_2.Cast<int>().ToArray().Sum()}");
+            Console.WriteLine($"Среднее арифметическое: {i_arr_2.Cast<int>().ToArray().Average()}");
+            Console.WriteLine($"Минимальное значение: {i_arr_2.Cast<int>().ToArray().Min()}");
+            Console.WriteLine($"Максимальное значение: {i_arr_2.Cast<int>().ToArray().Max()}");
 #endif
+#if JAGGED_ARRAYS
+            int[][] j_arr =
+            {
+                new int[] { 3, 5, 8, 13, 21 },
+                new int[] { 34, 55, 89 },
+                new int[] { 144, 233, 377, 610, 987 }
+            };
+            for (int i = 0; i < j_arr.GetLength(0); i++)
+            {
+                Console.WriteLine(j_arr[i][0]);
+            }
+            Console.WriteLine("\n-------------------------------------------------------------------\n");
+            foreach (int[] i in j_arr)
+            {
+                foreach (int j in i)
+                {
+                    Console.Write(j + "\t");
+                }
+                Console.WriteLine();
+            }
+#endif
+            Console.Write("Введите размер массива: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int[] arr = new int[n];
+            Random rand = new Random();
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = rand.Next(66,100);
+                //Console.WriteLine(arr[i] + "\t");
+            }
+            foreach (int i in arr)
+            {
+                Console.Write(i + "\t");
+            }
+
+            Console.WriteLine();
+
         }
     }
 }
