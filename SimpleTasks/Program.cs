@@ -41,8 +41,6 @@ namespace SimpleTasks
 			}
 			Console.WriteLine(N); 
 #endif
-
-			//Console.Write("Введите предел:");
 			Console.Write("Введите количество членов ряда:");
 			int n = Convert.ToInt32(Console.ReadLine());
 			for (long i = 0, a = 0, b = 1, c = a + b; i++ < n; c = (a = b) + (b = c))

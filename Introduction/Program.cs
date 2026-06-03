@@ -1,5 +1,6 @@
 ﻿//#define CONSOLE
 #define STRING_OPERATIONS
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,8 +31,8 @@ namespace Introduction
             string last_name = Console.ReadLine();
             int age = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine(first_name + " " + last_name + " " + age); //Конкатенация строк
-            Console.WriteLine(string.Format("{0} {1} {2}", first_name, last_name, age));//Форматирование строк
+            Console.WriteLine(first_name + " " + last_name + " " + age);
+            Console.WriteLine(string.Format("{0} {1} {2}", first_name, last_name, age));
             Console.WriteLine($"{first_name} {last_name} {age}");
 #endif
         }
